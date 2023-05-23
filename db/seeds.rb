@@ -5,3 +5,11 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+10.times do
+  title = "#{Faker::Hacker.verb} #{Faker::Hacker.adjective} #{Faker::Hacker.noun}"
+  Article.create(
+    title: title.split(' ').map(&:capitalize).join(' '),
+    content: Faker::Hacker.say_something_smart
+  )
+end
